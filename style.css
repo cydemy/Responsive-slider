@@ -1,0 +1,69 @@
+body {
+    margin: 0; /*수정하지 말것*/
+}
+
+/*************************************************************
+ * 슬라이더 적용 CSS
+ * ----------------
+ * 필요한 속성을 커스터마이징 하거나 새로운 선택자를 추가해서 수정
+ */
+.slider {
+    width: 100%; /*수정하지 말것*/
+    height: 500px;
+    overflow: hidden; /*수정하지 말것*/
+    position: relative; /*수정하지 말것*/
+}
+
+/*
+ * 슬라이드 효과로 처리 동적 연결
+ * slide 전환으로 처리되는 카드내 하위 요소에게 CSS 처리시
+ * .slider-item-slide를 prifix로 해서 하위 선택자로 지정
+ */
+.slider-item-slide h1 {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #FFF;
+    z-index: 99999;
+    text-decoration: none;
+}
+/*
+* 슬라이드 효과로 처리 동적 연결
+* fade 전환으로 처리되는 카드내 하위 요소에게 CSS 처리시
+* .slider-item-fade를 prifix로 해서 하위 선택자로 지정
+*/
+.slider-item-fade h1 {
+    padding-left: 50px;
+    color: #FFF;
+}
+.slider-item-slide > a,
+.slider-item-fade > a {
+    text-decoration: none;
+}
+
+/*
+ * Prev, Next 버튼에 대한 처리
+ */
+.slider:hover > .slider-navi {
+    display: block; /*수정하지 말것*/
+    cursor: pointer; /*수정하지 말것*/
+    font-weight: bold;
+}
+.slider:hover > .slider-navi:hover {
+    color: red;
+}
+.slider > .slider-navi {
+    position: absolute; /*수정하지 말것*/
+    z-index: 10; /*수정하지 말것*/
+    display: none; /*수정하지 말것*/
+    /* Bug fixed: 위치를 잡지 못하는 문제 때문에 top: 0을 줌*/
+    top: 0; /*수정하지 말것*/
+	line-height: 500px;
+}
+.slider > .slider-prev {
+    left: 10px;
+    
+}
+.slider > .slider-next {
+    right: 10px;
+}
